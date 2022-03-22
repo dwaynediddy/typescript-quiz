@@ -10,7 +10,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <h2>Diddys Quizzle</h2>
+      <h2>Diddy's Quizzle</h2>
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/quiz" element={<Quiz />} />

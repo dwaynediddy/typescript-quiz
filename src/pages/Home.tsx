@@ -5,7 +5,7 @@ const Home: React.FC = () => {
   return (
     <nav>
         <Link to={'/quiz'}>
-          <button>Start Quiz</button>
+          <button>Start Quizzle</button>
         </Link>
     </nav>
   )
