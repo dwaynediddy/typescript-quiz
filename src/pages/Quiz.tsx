@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link }from "react-router-dom"
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -21,7 +22,7 @@ const Quiz = () => {
 
   const questions = [
     { 
-      question: "question 1", 
+      question: "Question 1", 
       questionOptions: [
         {answerText: "answer 1", isCorrect: false},
         {answerText: "answer 2", isCorrect: false},
@@ -30,7 +31,7 @@ const Quiz = () => {
       ]
     },
     { 
-      question: "question 2", 
+      question: "Question 2", 
       questionOptions: [
         {answerText: "answer 1", isCorrect: false},
         {answerText: "answer 2", isCorrect: false},
@@ -39,7 +40,7 @@ const Quiz = () => {
       ]
     },
     { 
-      question: "question 3", 
+      question: "Question 3", 
       questionOptions: [
         {answerText: "answer 1", isCorrect: false},
         {answerText: "answer 2", isCorrect: false},
@@ -48,7 +49,7 @@ const Quiz = () => {
       ]
     },
     { 
-      question: "question 4", 
+      question: "Question 4", 
       questionOptions: [
         {answerText: "answer 1", isCorrect: false},
         {answerText: "answer 2", isCorrect: false},
@@ -61,16 +62,18 @@ const Quiz = () => {
   return (
     <div className='quiz'>
       {showScore ? (
-        <div>you got {score} out of {questions.length}</div>
+        <div className="scorePage">
+          you got {score} out of {questions.length}
+          <Link to={'/'}><button className="button">Return to Home</button></Link>
+        </div>
       ) : (
-        <>
-          <h3>Diddy's Quizzle</h3>
-          <div>{questions[currentQuestion].question}</div>
-          <div>
+        <div className="quizContainer">
+          <h2 className="questionLabel">{questions[currentQuestion].question}</h2>
+          <div className='questionContainer'>
             {questions[currentQuestion].questionOptions.map((answerOption) => (
-              <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>))}
+              <button className="button" onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>{answerOption.answerText}</button>))}
           </div>
-        </>
+        </div>
         )
       }
     </div>

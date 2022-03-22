@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link }from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Home: React.FC = () => {
   return (
     <nav>
         <Link to={'/quiz'}>
-          <button>Start Quizzle</button>
+          <button className="button">Start Quizzle</button>
         </Link>
     </nav>
   )
